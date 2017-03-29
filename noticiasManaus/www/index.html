@@ -69,6 +69,11 @@
         <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
         <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="sidebar/js/hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
     </head>
 
     <body>
@@ -80,33 +85,46 @@
                 <div class="uib-header header-bg container-group inner-element uib_w_1" data-uib="layout/header" data-ver="0">
                     <h2>Noticias</h2>
                     <div class="widget-container wrapping-col single-centered"></div>
-                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left">
+                        <button class="btn widget uib_w_8 d-margins btn-lg btn-link" data-uib="twitter%20bootstrap/button" data-ver="1" id="bt_menu"><i class="glyphicon glyphicon-th-list" data-position="icon only"></i>
+                        </button>
+                    </div>
                     <div class="widget-container content-area horiz-area wrapping-col right"></div>
                 </div>
                 <div class="upage-content ac0 content-area vertical-col left" id="page_78_43">
+                    <div class="widget uib_w_14 scale-image d-margins" data-uib="media/img" data-ver="0">
+                        <figure class="figure-align">
+                            <img src="images/camera.jpg" id="imagem_lista_noticia">
+
+                            <figcaption data-position="bottom"></figcaption>
+                        </figure>
+                    </div>
                     <div class="list-group widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1" id="list_noticias">
-                        <a class="list-group-item allow-badge widget uib_w_4" data-uib="twitter%20bootstrap/list_item" data-ver="1">
-                            <h4 class="list-group-item-heading">Heading</h4>
-                            <p class="list-group-item-text">List item</p>
-                        </a>
-                        <a class="list-group-item allow-badge widget uib_w_5" data-uib="twitter%20bootstrap/list_item" data-ver="1">
-                            <h4 class="list-group-item-heading">Heading</h4>
-                            <p class="list-group-item-text">List item</p>
-                        </a>
-                        <a class="list-group-item allow-badge widget uib_w_6" data-uib="twitter%20bootstrap/list_item" data-ver="1">
-                            <h4 class="list-group-item-heading">Heading</h4>
-                            <p class="list-group-item-text">List item</p>
-                        </a>
+
+                      
+                        
+                        
+                        
+
                     </div>
                 </div>
-                <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_2" data-uib="layout/footer" data-ver="0">
-                    <h2></h2>
-                    <div class="widget-container wrapping-col single-centered">
-                        <button class="btn widget uib_w_7 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bt_buscar"><i class="glyphicon glyphicon-search" data-position="icon only"></i>
+
+                <div class="inner-element uib_w_9 uib_sidebar leftbar bar-bg thumb-bg bar-gutter" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200}" id="left_side_bar">
+                    <div class="sidebar-content content-area vertical-col">
+
+                        <button class="btn widget uib_w_10 d-margins btn-xs btn-link" data-uib="twitter%20bootstrap/button" data-ver="1" id="left_side_bar_bt_fechar"><i class="glyphicon glyphicon-remove" data-position="icon only"></i>
                         </button>
+                        <div class="list-group widget uib_w_11 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1">
+                            <a class="list-group-item allow-badge widget uib_w_12" data-uib="twitter%20bootstrap/list_item" data-ver="1" id="list_menu_g1">
+
+                                <p class="list-group-item-text">Noticias G1</p>
+                            </a>
+                            <a class="list-group-item allow-badge widget uib_w_13" data-uib="twitter%20bootstrap/list_item" data-ver="1" id="list_menu_UOL">
+
+                                <p class="list-group-item-text">Noticias UOL</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
-                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
                 </div>
             </div>
         </div>
