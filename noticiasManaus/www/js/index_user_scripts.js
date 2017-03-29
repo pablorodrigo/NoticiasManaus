@@ -29,38 +29,27 @@
                 // adicionar imagem do RSS
                 $("#imagem_lista_noticia").attr("srcset",data.feed.image);
                 
+                //recebe os objetos items
+                lista_noticias = data.items;
+                
                 for(var i = 0; data.items.length; i++){
                     
                    // navigator.notification.alert(data.items[i].title);
                     
                      var title = data.items[i].title;
                         var data_noticia = data.items[i].pubDate;
-                    var item = '<a x:ID="'+ i +'" class="list-group-item allow-badge widget uib_w_0" data-uib="twitter%20bootstrap/list_noticias" data-ver="1">' +
-                    '<h4 class="list-group-item-heading">' + title + '</h4>' +
-                    '<p class="list-group-item-text">' + data_noticia + '</p>' +
-                '</a>';
+                            var item = '<a x:ID="'+ i +'" class="list-group-item allow-badge widget uib_w_0" data-uib="twitter%20bootstrap/list_noticias" data-ver="1">' +
+                                '<h4 class="list-group-item-heading">' + title + '</h4>' +
+                                    '<p class="list-group-item-text">' + data_noticia + '</p>' +
+                                        '</a>';
                      $("#list_noticias").append(item);
                 }
-                
-                //navigator.notification.alert(data);
-                //navigator.notification.alert(data.items[0].title);
-                
             }   
         });
          
      }
      
      
-         /* button  #bt_buscar */
-    $(document).on("click", "#bt_buscar", function(evt)
-    {
-        /* your code goes here */ 
-        
-        $("#list_noticias").empty();
-         //navigator.notification.alert(jsonObj);
-         return false;
-    });
-    
         /* button  #bt_menu */
     $(document).on("click", "#bt_menu", function(evt)
     {
@@ -92,6 +81,40 @@
         
          uib_sb.toggle_sidebar($("#left_side_bar"));  
          return false;
+    });
+     
+      $(document).on("click", "#list_noticias > a", function(evt)
+    {
+        // pega id de m item da lista
+        var id = $(this).attr("x:ID");
+            var noticia_detalhada = lista_noticias[id];
+         //limpar imagem
+         $("#imagem_detalhe_noticia").attr("srcset","");
+         $("#imagem_detalhe_noticia").attr("srcset",noticia_detalhada.enclosure.link);
+          // mudar tamanho
+        $("#imagem_detalhe_noticia").css("width","100%");
+          // prepare page
+          
+          //navigator.notification.alert(noticia_detalhada.title);
+        
+//        var title = e.title;
+//        var link = e.permalink; 
+//        var img = e.thumbnail;
+//        var excerpt = e.excerpt; 
+//        var content = e.content;
+         
+         // .html corrigi texto estranho
+         $("#txt_titulo_detalhe h2").html(noticia_detalhada.title);
+        //$("#txt_descricao_detalhe").html(noticia_detalhada.link);
+         $("#iframe_url").attr("src",noticia_detalhada.link);
+           
+         // pegar imgem do texto
+        // $("#txt_descricao_detalhe p img").each(function(){
+       //     $(this).css('width', '100%')
+       //            .css('height', '100%');
+      //  });
+  
+        activate_page("#page_noticia_detalhe"); 
     });
     
         /* listitem  #list_menu_g1 */
@@ -127,6 +150,14 @@
           See js/sidebar.js for the full sidebar API */
         
          uib_sb.toggle_sidebar($("#left_side_bar"));  
+         return false;
+    });
+    
+        /* button  #bt_voltar */
+    $(document).on("click", "#bt_voltar", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage"); 
          return false;
     });
     
