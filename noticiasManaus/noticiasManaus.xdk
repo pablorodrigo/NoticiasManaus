@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "63c3f1c4-1dac-4008-8b0f-0bab27d72668",
-      "lastModifiedDate": 1490742255453,
+      "lastModifiedDate": 1490759784520,
       "creationDate": 1490741183586
     },
     "XDK-app-designer": "true",
@@ -109,9 +109,9 @@
           "android-signed": true
         },
         "isActive_": true,
-        "certificateId_": "",
-        "appName_": "noticiasManaus",
-        "appID_": "xdk.intel.blank.ad.template.crosswalk",
+        "certificateId_": "8Bj32zMLqkq_xynL2eM1DQ2",
+        "appName_": "XDK Android Noticias",
+        "appID_": "br.com.pablo.uninorte.feedreader",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -128,15 +128,48 @@
           ],
           "navigation": []
         },
-        "icons_": [],
-        "splashes_": [],
+        "icons_": [
+          {
+            "density": "ldpi",
+            "relPath": "package-assets/rss_feed_black_36x36.png",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "density": "mdpi",
+            "relPath": "package-assets/rss_feed_black_48x48.png",
+            "width": 48,
+            "height": 48
+          },
+          {
+            "density": "hdpi",
+            "relPath": "package-assets/rss_feed_black_72x72.png",
+            "width": 72,
+            "height": 72
+          },
+          {
+            "density": "xhdpi",
+            "relPath": "package-assets/rss_feed_black_96x96.png",
+            "width": 96,
+            "height": 96
+          }
+        ],
+        "splashes_": [
+          {
+            "relPath": "package-assets/cordova.png",
+            "density": "xhdpi",
+            "height": 960,
+            "width": 720,
+            "orientation": "portrait"
+          }
+        ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "19",
-        "appVersion_": "0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
+        "appVersion_": "1.0",
+        "appAuthor_": "Pablo Silva",
+        "appDescription_": "Feito para teste, não baixar =)",
         "appVersionCode_": "1",
         "signed_": true
       },
