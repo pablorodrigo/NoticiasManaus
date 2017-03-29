@@ -13,8 +13,16 @@
             var lista_noticias = [];
      
      
-         //conecar com o servidor do g1, pegar os dados e exibir na tela
+    //conectar com o servidor da URL, pegar os dados e exibir na tela
      function carregarRSS(url){
+         
+        var url_invalida = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+        if (!url_invalida.test(url))
+        {
+            navigator.notification.alert("URL invalida");
+            return false;
+        }
+         
          //limpar lista
           $("#list_noticias").empty();
          
@@ -66,9 +74,6 @@
     });
     
         /* button  #left_side_bar_bt_fechar */
-    
-    
-        /* button  #left_side_bar_bt_fechar */
     $(document).on("click", "#left_side_bar_bt_fechar", function(evt)
     {
          /*global uib_sb */
@@ -88,31 +93,10 @@
         // pega id de m item da lista
         var id = $(this).attr("x:ID");
             var noticia_detalhada = lista_noticias[id];
-         //limpar imagem
-         $("#imagem_detalhe_noticia").attr("srcset","");
-         $("#imagem_detalhe_noticia").attr("srcset",noticia_detalhada.enclosure.link);
-          // mudar tamanho
-        $("#imagem_detalhe_noticia").css("width","100%");
-          // prepare page
-          
-          //navigator.notification.alert(noticia_detalhada.title);
         
-//        var title = e.title;
-//        var link = e.permalink; 
-//        var img = e.thumbnail;
-//        var excerpt = e.excerpt; 
-//        var content = e.content;
-         
-         // .html corrigi texto estranho
-         $("#txt_titulo_detalhe h2").html(noticia_detalhada.title);
-        //$("#txt_descricao_detalhe").html(noticia_detalhada.link);
          $("#iframe_url").attr("src",noticia_detalhada.link);
            
-         // pegar imgem do texto
-        // $("#txt_descricao_detalhe p img").each(function(){
-       //     $(this).css('width', '100%')
-       //            .css('height', '100%');
-      //  });
+        
   
         activate_page("#page_noticia_detalhe"); 
     });
@@ -152,6 +136,33 @@
          uib_sb.toggle_sidebar($("#left_side_bar"));  
          return false;
     });
+     
+     /* listitem  #list_menu_novo */
+    $(document).on("click", "#list_menu_novo", function(evt)
+    {
+        //dialog para pedir a url
+        navigator.notification.prompt(
+            'URL',onPrompt,"Digite a URL",['Buscar','Sair']           // buttonLabels
+        );
+        
+         /*global uib_sb */
+         /* Other possible functions are: 
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+        
+         uib_sb.toggle_sidebar($("#left_side_bar"));  
+         return false;
+    });
+     
+     // pega resultado do dialog
+    function onPrompt(results) {
+        
+        carregarRSS(results.input1);
+    }
+     
     
         /* button  #bt_voltar */
     $(document).on("click", "#bt_voltar", function(evt)
