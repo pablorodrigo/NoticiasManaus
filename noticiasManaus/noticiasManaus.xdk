@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "63c3f1c4-1dac-4008-8b0f-0bab27d72668",
-      "lastModifiedDate": 1490837066958,
+      "lastModifiedDate": 1490842222831,
       "creationDate": 1490741183586
     },
     "XDK-app-designer": "true",
@@ -156,7 +156,28 @@
         ],
         "splashes_": [
           {
-            "relPath": "package-assets/cordova.png",
+            "relPath": "package-assets/320x426.png",
+            "density": "ldpi",
+            "height": 426,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "package-assets/320x470.png",
+            "density": "mdpi",
+            "height": 470,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "package-assets/480x640.png",
+            "density": "hdpi",
+            "height": 640,
+            "width": 480,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "package-assets/720x960.png",
             "density": "xhdpi",
             "height": 960,
             "width": 720,
