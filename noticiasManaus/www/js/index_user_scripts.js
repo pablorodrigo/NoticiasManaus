@@ -163,12 +163,39 @@
         carregarRSS(results.input1);
     }
      
-    
+      // sair do App
+    function sairApp(button) {
+        
+        // verifica botao clicado
+        if(button == 1){
+             navigator.app.exitApp();
+        }else{
+            return;
+        }
+       
+     
+        
+    }
         /* button  #bt_voltar */
     $(document).on("click", "#bt_voltar", function(evt)
     {
          /*global activate_page */
          activate_page("#mainpage"); 
+         return false;
+    });
+    
+        /* button  #bt_sair */
+    $(document).on("click", "#bt_sair", function(evt)
+    {
+        
+        navigator.notification.confirm(
+        '',  // message
+        sairApp,              // callback to invoke with index of button pressed
+        'Deseja sair da Aplicação?',            // title
+        'Sim,Não'          // buttonLabels
+    );
+        
+        /* your code goes here */ 
          return false;
     });
     
